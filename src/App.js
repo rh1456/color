@@ -22,13 +22,13 @@ const App = () => {
       setLightness(lightness + 1)
     }
   }
-  // const randomColor = eventData => {
-  //   if (eventData) {
-  //     setHue(Math.floor(Math.random() * 360))
-  //     setLightness(Math.floor(Math.random() * 100))
-  //     setSaturation(Math.floor(Math.random() * 100))
-  //   }
-  // }
+  const randomColor = eventData => {
+    if (eventData) {
+      setHue(Math.floor(Math.random() * 360))
+      setLightness(Math.floor(Math.random() * 100))
+      setSaturation(Math.floor(Math.random() * 100))
+    }
+  }
   const divStyle = {
     backgroundColor: `hsl(${hue}, ${saturation}%, ${lightness}% )`,
   }
@@ -62,9 +62,7 @@ const App = () => {
         <input type="text" {...lightness} />
       </section>
 
-      {/* <button onClick={eventData => randomColor(event.target.value)}>
-        Change Color
-      </button> */}
+      <button onClick={randomColor}>Change Color</button>
     </>
   )
 }
