@@ -1,39 +1,46 @@
 import React, { useState } from 'react'
 // import Format from './components/setup'
-const color = props => {
+
+const App = () => {
   const [hue, setHue] = useState(0)
   const [saturation, setSaturation] = useState(0)
   const [lightness, setLightness] = useState(0)
 
   const changeHue = eventData => {
-    // setHue(eventData.target.value)
+    if (hue >= 0) {
+      setHue(hue + 1)
+    }
   }
-  const changeSaturation = eventData => {}
-  const changeLightness = eventData => {}
-}
+  const changeSaturation = eventData => {
+    if (saturation >= 0) {
+      setSaturation(saturation + 1)
+    }
+  }
+  const changeLightness = eventData => {
+    if (lightness >= 0) {
+      setLightness(lightness + 1)
+    }
+  }
 
-const divStyle = {
-  backgroundColor: 'hsl(120, 100%, 50%)',
-  color: 'hsl(0, 0%, 0%)',
-}
-
-const App = () => {
+  const divStyle = {
+    backgroundColor: `hsl(${hue}, ${saturation}, ${lightness} )`,
+  }
   return (
     <>
       <div style={divStyle} class="colorBox"></div>
 
       <section class="colorSliderWrap">
         <span>Hue</span>
+        <input type="range" min={hue} max="360" onChange={changeHue} />
+        <span>Saturation</span>
+        <input type="range" min={hue} max="100" onChange={changeSaturation} />
+        <span>Lightness</span>
         <input
           type="range"
-          min={props.hue}
-          max="360"
-          onChange={changeSaturation}
+          min={lightness}
+          max="100"
+          onChange={changeLightness}
         />
-        <span>Saturation</span>
-        <input type="range" min={props.hue} max="100" onChange={changeHue} />
-        <span>Lightness</span>
-        <input type="range" min={props.lightness} onChange={changeSaturation} />
       </section>
     </>
   )
