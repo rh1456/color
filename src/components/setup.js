@@ -57,13 +57,12 @@ const Setup = () => {
       </section>
       <section class="colorInfo">
         <ul>
-          <li>{hue}</li>
-          <li>{saturation}</li>
-          <li>{lightness}</li>
+          <li>Hue: {hue} </li>
+          <li>Saturation {saturation} </li>
+          <li>Lightness {lightness} </li>
         </ul>
+        <button onClick={randomColor}>Change Color</button>
       </section>
-
-      <button onClick={randomColor}>Change Color</button>
     </>
   )
 }

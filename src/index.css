@@ -28,9 +28,28 @@ body {
   display: flex;
   justify-content: flex-start;
   border-style: solid;
+  border-radius: 50px;
   border-color: grey;
   border-width: 10px;
-  width: 75px;
+  width: 10rem;
   height: 100px;
+  margin-left: 8rem;
+
   /* width: ; */
 }
+ul {
+  display: flex;
+  flex-direction: row;
+}
+li {
+  list-style: none;
+  padding: 15px;
+}
+/* button {
+  margin-left: 8rem;
+} */
+
+/* li {
+  display: flex;
+  justify-content: space-between;
+} */
